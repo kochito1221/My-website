@@ -1,0 +1,34 @@
+body {
+margin: 0;
+padding: 0;
+background-image: url(40.jpg);
+background-size: cover;
+height: 100hv;
+font-family: sans-serif;            
+}
+.box {
+ height: 26px;
+ width: 250px;
+background-color: rgba(2, 0, 5, 905);
+opacity: 80%;
+position: absolute;
+color: #fff;
+transform: translate(-50),-50;
+ left: 50%;
+padding: 30px 30px;
+ border-radius: 30px;
+ }
+ h1 {
+margin: 0 0 20px;
+padding: 0;
+text-align: center;
+background-size: cover;
+font-size: 25px;        
+} 
+.box input{
+width: 10%;
+margin-bottom: 20px;
+color: white;            
+}
+     
+        
