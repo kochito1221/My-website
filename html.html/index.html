@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koch Academy</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="login-style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Koch Academy</h1>
+        <h3>Pharm Tutor Academy</h3>
+    </header>
+
+    <nav class="navbar" id="mynavbar">
+        <a href="#">HOME</a>
+        <a href="#">DESIGN</a>
+        <div class="dropdown">
+            <button class="dropdownbtn" id="dropdownBtn">Tutor Academy</button>
+            <div class="dropdown-list" id="dropdownList">
+                <a href="#">Pharmacotherapy One</a>
+                <a href="#">Pharmacotherapy Two</a>
+                <a href="#">Pharmacotherapy Three</a>
+                <a href="#">Pharmacotherapy Four</a>
+            </div>
+        </div>
+        <a href="#">CONTACT</a>
+        <a href="#">ABOUT US</a>
+        <?php if (isset($_SESSION['username'])): ?>
+            <span>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</span>
+            <a href="logout.php">LOG OUT</a>
+        <?php else: ?>
+            <a href="login.php">LOG IN</a>
+            <a href="register.php">SIGN UP</a>
+        <?php endif; ?>
+        <a href="javascript:void(0);" class="icon" id="menuIcon">&#9776;</a>
+    </nav>
+
+    <div class="hero">
+        <h2>Empower Your Future in Pharmacotherapy with Koch Academy</h2>
+        <!-- Home section description -->
+        <p class="section-paragraph" style="display: block; text-align: center;">
+            <b>Home:</b> Welcome to Koch Academy, your gateway to inspired learning and creative design. Discover educational opportunities tailored for your growth.
+        </p>
+    </div>
+    <i><i class="fas fa-hand-pointer pointer-icon"></i></i>
+    
+    <!-- Design Section Description -->
+    <section class="cont">
+        <h1>Learn <br> <span>Pharmacotherapy</span></h1>
+        <p class="para">
+            <b>Design:</b> Explore innovative design ideas and unleash your creative potential with our expert guidance. Our programs blend theory and practice for real-world skills.<br><br>
+            Koch Academy's Pharmacotherapy program offers comprehensive training in medication management and therapeutic strategies.
+        </p>
+        <button class="btn-glass"><i class="fas fa-rocket"></i> Start Now</button>
+    </section>
+    
+    <!-- Tutor Section Description -->
+    <section class="cont">
+        <h1><span>Tutor Academy</span></h1>
+        <p class="para">
+            <b>Tutor:</b> Connect with experienced tutors and join a vibrant learning community at Koch Academy. Our tutors specialize in pharmacotherapy, design, and more to support your academic journey.
+        </p>
+    </section>
+    
+    <!-- About Section Description -->
+    <section class="cont">
+        <h1><span>About Us</span></h1>
+        <p class="para">
+            <b>About:</b> Koch Academy is committed to excellence in education, fostering creativity, and supporting students in their professional and personal growth. Meet the passionate team behind our success.
+        </p>
+    </section>
+    
+    <!-- Gallery with short description for each image -->
+    <section class="gallery">
+        <div style="text-align:center;">
+            <img src="koch.jpg" alt="koch photo 1">
+            <div class="img-desc">Koch Academy main campus—where learning begins.</div>
+        </div>
+        <div style="text-align:center;">
+            <img src="34.jpg" alt="34 photo 2">
+            <div class="img-desc">Design Studio—innovation and creativity in action.</div>
+        </div>
+        <div style="text-align:center;">
+            <img src="pharm.jpg" alt="40 photo 3">
+            <div class="img-desc">Tutor Academy—expert guidance for pharmacotherapy.</div>
+        </div>
+        <div style="text-align:center;">
+            <img src="bu.jpg" alt="bu photo 4">
+            <div class="img-desc">Student community—collaboration and growth together.</div>
+        </div>
+        <!-- Additional 4 image spaces below -->
+        <div style="text-align:center;">
+            <img src="logo.jpg" alt="Research Lab photo 5">
+            <div class="img-desc">Research Lab—discoveries in medicine and science.</div>
+        </div>
+        <div style="text-align:center;">
+            <img src="pharm.jpg" alt="Library photo 6">
+            <div class="img-desc">Library—resources and quiet study spaces for all.</div>
+        </div>
+        <div style="text-align:center;">
+            <img src="360_F_577842756_DWiS65lNLDG5DPaozrJk3c9TgkGGBwCb.jpg" alt="Workshop photo 7">
+            <div class="img-desc">Workshop—hands-on learning and skill building.</div>
+        </div>
+        <div style="text-align:center;">
+            <img src="34.jpg" alt="Graduation photo 8">
+            <div class="img-desc">Graduation—celebrating achievements and new beginnings.</div>
+        </div>
+        <section class="gallery">
+    <div class="img-space" style="background-color: #f8f9fa;">
+        <img src="koch.jpg" alt="koch photo 1">
+        <div class="img-desc">Koch Academy main campus—where learning begins.</div>
+    </div>
+    <div class="img-space" style="background-color: #e0f7fa;">
+        <img src="34.jpg" alt="34 photo 2">
+        <div class="img-desc">Design Studio—innovation and creativity in action.</div>
+    </div>
+    <div class="img-space" style="background-color: #fffde7;">
+        <img src="pharm.jpg" alt="40 photo 3">
+        <div class="img-desc">Tutor Academy—expert guidance for pharmacotherapy.</div>
+    </div>
+    <div class="img-space" style="background-color: #fce4ec;">
+        <img src="bu.jpg" alt="bu photo 4">
+        <div class="img-desc">Student community—collaboration and growth together.</div>
+    </div>
+    <!-- Add more as needed -->
+</section>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Koch Academy. All rights reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
