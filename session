@@ -1,0 +1,9 @@
+
+<?php
+// Include this file at the top of protected pages if you want DRY session checks
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header('Location: login.php');
+    exit();
+}
+?>

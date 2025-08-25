@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koch Academy</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="register.html">
+    <link rel="stylesheet" href="css/login.html">
+    <link rel="stylesheet" href="proccess_payment.html">
+    <link rel="stylesheet" href="logout.html">
+    <link rel="stylesheet" href="script.js">
+    <style>
+        /* General body and typography styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* --- Header and Navigation --- */
+        header {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 2rem 1rem;
+            text-align: center;
+            border-bottom: 5px solid #2980b9;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin: 0.5rem 0 0.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        header h3 {
+            font-size: 1.2em;
+            margin: 0;
+            color: #bdc3c7;
+            font-weight: normal;
+        }
+
+        .logo-container {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+        }
+
+        .logo-container img {
+            height: 80px;
+            width: auto;
+            border-radius: 50%;
+            border: 3px solid #fff;
+        }
+
+        .navbar {
+            background-color: #34495e;
+            padding: 0.8rem 1rem;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar a {
+            color: #ecf0f1;
+            text-decoration: none;
+            padding: 0.8rem 1.2rem;
+            transition: background-color 0.3s, color 0.3s;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .navbar a:hover,
+        .navbar a:focus {
+            background-color: #2980b9;
+            color: #fff;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdownbtn {
+            background-color: transparent;
+            color: #ecf0f1;
+            padding: 0.8rem 1.2rem;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1em;
+            text-transform: uppercase;
+            transition: background-color 0.3s;
+        }
+
+        .dropdownbtn:hover {
+            background-color: #2980b9;
+        }
+
+        .dropdown-list {
+            display: none;
+            position: absolute;
+            background-color: #34495e;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            top: 100%;
+            left: 0;
+        }
+
+        .dropdown-list a {
+            color: #ecf0f1;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-list a:hover {
+            background-color: #2980b9;
+        }
+
+        .dropdown:hover .dropdown-list {
+            display: block;
+        }
+
+        .navbar span {
+            padding: 0.8rem 1.2rem;
+            color: #2ecc71;
+            font-weight: bold;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('your-hero-image.jpg') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 6rem 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero h2 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        .hero p.section-paragraph {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 1rem auto;
+        }
+
+        /* --- Main Content Sections --- */
+        .cont {
+            padding: 3rem 5%;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .cont h1 {
+            font-size: 2.5em;
+            color: #2c3e50;
+            border-bottom: 3px solid #2980b9;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cont h1 span {
+            color: #2980b9;
+        }
+        
+        /* New and improved paragraph styles */
+        .para, .section-paragraph {
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            font-size: 1.1em;
+            color: #444;
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Glass and movable color button */
+        .btn-glass {
+            background: linear-gradient(120deg, #ff6347, #f06, #2980b9);
+            background-size: 200% 100%;
+            color: #fff;
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: all 0.5s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: none;
+        }
+
+        .btn-glass:hover {
+            background-position: 100% 0;
+            transform: scale(1.05);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* --- Image Gallery --- */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            padding: 2rem 5%;
+            background-color: #ecf0f1;
+        }
+
+        .img-space {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .img-space img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .img-space:hover img {
+            transform: scale(1.05);
+        }
+
+        .img-desc {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .img-space:hover .img-desc {
+            opacity: 1;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 1.5rem 1rem;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9em;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .navbar a,
+            .dropdownbtn,
+            .navbar span {
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid #49617d;
+            }
+
+            .dropdown-list {
+                position: static;
+                width: 100%;
+            }
+
+            .hero h2 {
+                font-size: 2em;
+            }
+
+            .logo-container {
+                position: static;
+                margin-bottom: 1rem;
+            }
+
+            .logo-container img {
+                height: 60px;
+            }
+
+            header {
+                padding: 1rem;
+            }
+        }
+
+        /* Utility classes for HTML errors */
+        .pointer-icon {
+            display: none;
+        }
+        
+        /* Fix for repeated headers, use one header only */
+        body > header:nth-of-type(2) {
+            display: none;
+        }
+    </style>
+    <style>
+        body {
+            font-family: 'Open Sans', Arial, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+        .section-paragraph {
+            color: tomato; /* Text color */
+            font-size: 1.2em; /* Increase font size */
+            font-weight: bold; /* Make text bold */
+            text-align: center; /* Center align the text */
+            background-color: rgba(255, 99, 71, 0.1); /* Light tomato background */
+            padding: 1rem; /* Add padding */
+            border-radius: 8px; /* Rounded corners */
+            margin: 1rem auto; /* Center the paragraph with margin */
+            max-width: 600px; /* Limit the width for better readability */
+        }
+    </style>
+    <style>
+        body {
+            font-family: 'Open Sans', Arial, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            text-align: center; /* Center text for better alignment */
+        }
+
+        h1 {
+            color: green; /* Green color for headings */
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .section-paragraph {
+            color: tomato; /* Tomato color for the section paragraph */
+            font-size: 1.2em; /* Increase font size */
+            font-weight: bold; /* Make text bold */
+            background-color: rgba(255, 99, 71, 0.1); /* Light tomato background */
+            padding: 1rem; /* Add padding */
+            border-radius: 8px; /* Rounded corners */
+            max-width: 600px; /* Limit the width for better readability */
+            margin: 0 auto; /* Center the paragraph */
+        }
+
+        .btn-glass {
+            background-color: rgba(255, 255, 255, 0.6); /* Glass effect background */
+            border: none;
+            border-radius: 10px;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: green; /* Green text color for button */
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-glass:hover {
+            background-color: rgba(255, 255, 255, 0.8); /* Change background on hover */
+        }
+
+        .cont {
+            margin: 20px auto; /* Center the sections */
+            max-width: 800px; /* Limit the width for better readability */
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.9); /* Light background for sections */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        }
+
+        .para {
+            color: #333; /* Standard text color for paragraphs */
+            line-height: 1.6; /* Increase line height for readability */
+        }
+
+        .pointer-icon {
+            font-size: 2em; /* Increase size of pointer icon */
+            color: tomato; /* Tomato color for pointer icon */
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="logok.jpg" alt="Koch Academy Logo" />
+        </div>
+        <h1>KOCH ACADEMY</h1>
+        <h3>Pharmacy Education Excellence</h3>
+    </header>
+    <nav class="navbar" id="mynavbar">
+        <a href="#">HOME</a>
+        <a href="#">ABOUT US</a>
+        <a href="#">DESIGN</a>
+        <a href="#">CONTACT</a>
+        <div class="dropdown">
+            <button class="dropdownbtn" id="dropdownBtn"><i class="fas fa-user-graduate"></i>Tutor Academy</button>
+            <div class="dropdown-list" id="dropdownList">
+                <a href="#">Pharmacotherapy One</a>
+                <a href="#">Pharmacotherapy Two</a>
+                <a href="#">Pharmacotherapy Three</a>
+                <a href="#">Pharmacotherapy Four</a>
+            </div>
+        </div>
+        <a href="register.html">SIGN UP</a>
+        <a href="login.html">LOG IN</a>
+    </nav>
+    <div class="hero">
+        <h2>Empower Your Future in Pharmacotherapy with Koch Academy</h2>
+        <p class="section-paragraph">
+            <b>Home:</b> Welcome to Koch Academy, your gateway to inspired learning and creative design.
+            Discover educational opportunities tailored for your growth.
+        </p>
+    </div>
+    <div class="cont">
+        <h1>KOCH Academy</h1>
+        <p class="section-paragraph">
+            Discover the powerful features that make our platform stand out.
+        </p>
+        <button class="btn-glass"><i class="fas fa-rocket"></i> Start Now</button>
+    </div>
+    <i class="fas fa-hand-pointer pointer-icon"></i>
+    <section class="cont">
+        <h1>Learn <br> <span>Pharmacotherapy</span></h1>
+        <p class="para">
+            <b>Design:</b> Explore innovative design ideas and unleash your creative potential with our expert guidance. Our programs blend theory and practice for real-world skills.<br><br>
+            <hr>
+            <br>Koch Academy's Pharmacotherapy program offers comprehensive training in medication management and therapeutic strategies.
+        </p>
+    </section>
+    <section class="cont">
+        <h1><span>Tutor Academy</span></h1>
+        <p class="para">
+            <b>Tutor:</b> Connect with experienced tutors and join a vibrant learning community at Koch Academy. Our tutors specialize in pharmacotherapy, design, and more to support your academic journey.
+        </p>
+    </section>
+    <section class="cont">
+        <h1><span>About Us</span></h1>
+        <p class="para">
+            <b>About:</b> Koch Academy is committed to excellence in education, fostering creativity, and supporting students in their professional and personal growth. Meet the passionate team behind our success.
+        </p>
+    </section>
+    <section class="gallery">
+        <div class="img-space">
+            <img src="koch.jpg" alt="Koch Academy main campus">
+            <div class="img-desc">Koch Academy main campus—where learning begins.</div>
+        </div>
+        <div class="img-space">
+            <img src="video_2025-08-15_15-46-48.mp4" alt="Design Studio">
+            <div class="img-desc">Design Studio—innovation and creativity in action.</div>
+        </div>
+        <div class="img-space">
+            <img src="pharm.jpg" alt="Tutor Academy">
+            <div class="img-desc">Tutor Academy—expert guidance for pharmacotherapy.</div>
+        </div>
+        <div class="img-space">
+            <img src="bu.jpg" alt="university staffs">
+            <div class="img-desc">Student community—collaboration and growth together.</div>
+        </div>
+        <div class="img-space">
+            <img src="logo.jpg" alt="Research Lab">
+            <div class="img-desc">Research Lab—discoveries in medicine and science.</div>
+        </div>
+        <div class="img-space">
+            <img src="pharm.jpg" alt="Library">
+            <div class="img-desc">Library—resources and quiet study spaces for all.</div>
+        </div>
+        <div class="img-space">
+            <img src="bu.jpg" alt="Workshop" />
+            <div class="img-desc">Workshop—hands-on learning and skill building.</div>
+        </div>
+        <div class="img-space">
+            <img src="34.jpg" alt="Graduation" />
+            <div class="img-desc">Graduation—celebrating achievements and new beginnings.</div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2025 Koch Academy. All rights reserved.</p>
+    </footer>
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
